@@ -22,6 +22,7 @@ clf = classify(features_train, labels_train)
 
 
 # Calculate accuracy
+clf = clf.fit(features_train, labels_train)
 pred = clf.predict(features_test)
 acc = accuracy_score(labels_test,pred)
 
