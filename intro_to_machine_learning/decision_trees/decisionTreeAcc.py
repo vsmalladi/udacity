@@ -5,8 +5,8 @@ from prep_terrain_data import makeTerrainData
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab as pl
-from sklearn.metrics import accuracy_score
 from sklearn import tree
+from sklearn.metrics import accuracy_score
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
 
@@ -25,15 +25,16 @@ clf_2 = tree.DecisionTreeRegressor(min_samples_split=2)
 clf_2 = clf_2.fit(features_train, labels_train)
 
 clf_50 = tree.DecisionTreeRegressor(min_samples_split=50)
-clf_50 = clf_2.fit(features_train, labels_train)
+clf_50 = clf_50.fit(features_train, labels_train)
 
 clf_2 = clf_2.fit(features_train, labels_train)
 pred_2 = clf_2.predict(features_test)
-acc_min_samples_split_2 = accuracy_score(labels_test,pred_2)
+acc_min_samples_split_2 = accuracy_score(labels_test, pred_2)
 
-clf_50 = clf_50.fit(features_train, labels_train)
-pred_50 = clf_50.predict(features_test)
-acc_min_samples_split_50 = accuracy_score(labels_test,pred_50)
+clf_2 = clf_2.fit(features_train, labels_train)
+pred_50 = clf_2.predict(features_test)
+acc_min_samples_split_50 = accuracy_score(labels_test, pred_50)
+
 
 def submitAccuracies():
   return {"acc_min_samples_split_2":round(acc_min_samples_split_2,3),
