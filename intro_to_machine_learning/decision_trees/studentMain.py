@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pylab as pl
 from classifyDT import classify
+from sklearn.metrics import accuracy_score
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
 
@@ -20,8 +21,11 @@ features_train, labels_train, features_test, labels_test = makeTerrainData()
 clf = classify(features_train, labels_train)
 
 
+# Calculate accuracy
+pred = clf.predict(features_test)
+acc = accuracy_score(labels_test,pred)
 
-
+return {"acc":round(acc,3)}
 
 
 
