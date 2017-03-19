@@ -31,8 +31,9 @@ plt.show()
 ### your code here!  name your classifier object clf if you want the
 ### visualization code (prettyPicture) to show you the decision boundary
 from sklearn import ensemble
+from sklearn import neighbors
 from sklearn.metrics import accuracy_score
-clf = ensemble.RandomForestClassifier(n_estimators=20, criterion='entropy', min_samples_split=20)
+clf = ensemble.RandomForestClassifier(n_estimators=20, criterion='gini', min_samples_split=20)
 clf = clf.fit(features_train, labels_train)
 pred = clf.predict(features_test)
 
@@ -40,9 +41,13 @@ acc = accuracy_score(labels_test, pred.astype(int))
 print "Accuracy: ", acc
 
 
+# Trying to improve accurary using Kneighbors, using eucledian distance
+clf = neighbors.KNeighborsClassifier(algorithm='auto', n_neighbors=2, p=2, weights='distance', leaf_size=20)
+clf = clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
 
-
-
+acc = accuracy_score(labels_test, pred.astype(int))
+print "Accuracy: ", acc
 
 
 try:
