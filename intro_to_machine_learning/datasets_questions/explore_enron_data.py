@@ -35,3 +35,6 @@ print pois
 
 # Query The Dataset 1
 print enron_data['PRENTICE JAMES']['total_stock_value']
+
+# Query The Dataset 2
+print enron_data['COLWELL WESLEY']['from_this_person_to_poi']
