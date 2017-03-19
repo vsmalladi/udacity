@@ -62,3 +62,20 @@ for k in enron_data.keys():
 
 print salary
 print email
+
+# Missing POIs 1 (Optional)
+total = 0
+for k in enron_data.keys():
+    if enron_data[k]["total_payments"] == 'NaN':
+        total += 1
+
+print total/float(len(enron_data.keys())) * 100
+
+# Missing POIs 2 (Optional)
+total_pois = 0
+for k in enron_data.keys():
+    if enron_data[k]["poi"] == 1:
+        if enron_data[k]["total_payments"] == 'NaN':
+            total_pois += 1
+
+print total_pois/float(pois) * 100
