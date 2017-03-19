@@ -38,3 +38,6 @@ print enron_data['PRENTICE JAMES']['total_stock_value']
 
 # Query The Dataset 2
 print enron_data['COLWELL WESLEY']['from_this_person_to_poi']
+
+# Query The Dataset 3
+print enron_data['SKILLING JEFFREY K']['exercised_stock_options']
