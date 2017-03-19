@@ -41,3 +41,8 @@ print enron_data['COLWELL WESLEY']['from_this_person_to_poi']
 
 # Query The Dataset 3
 print enron_data['SKILLING JEFFREY K']['exercised_stock_options']
+
+#  Follow The Money
+print enron_data['SKILLING JEFFREY K']['total_payments']
+print enron_data['LAY KENNETH L']['total_payments']
+print enron_data['FASTOW ANDREW S']['total_payments']
