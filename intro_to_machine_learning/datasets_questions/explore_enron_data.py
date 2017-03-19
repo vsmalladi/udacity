@@ -24,3 +24,11 @@ print len(enron_data.keys())
 
 # Number of features
 print len(enron_data['METTS MARK'].keys())
+
+# Finding POIs In The Enron Data
+pois = 0
+for k in enron_data.keys():
+    if enron_data[k]["poi"] == 1:
+        pois += 1
+
+print pois
