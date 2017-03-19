@@ -49,3 +49,16 @@ print enron_data['FASTOW ANDREW S']['total_payments']
 
 # Unfilled features
 print enron_data['FASTOW ANDREW S'].values()
+
+ # Dealing With Unfilled Features
+# Finding POIs In The Enron Data
+salary = 0
+email = 0
+for k in enron_data.keys():
+    if enron_data[k]["salary"] != 'NaN':
+        salary += 1
+    if enron_data[k]["email_address"] != 'NaN':
+        email += 1
+
+print salary
+print email
