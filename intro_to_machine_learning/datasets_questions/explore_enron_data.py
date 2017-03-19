@@ -21,3 +21,6 @@ enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r")
 
 # Number of people
 print len(enron_data.keys())
+
+# Number of features
+print len(enron_data['METTS MARK'].keys())
