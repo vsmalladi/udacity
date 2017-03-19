@@ -32,3 +32,6 @@ for k in enron_data.keys():
         pois += 1
 
 print pois
+
+# Query The Dataset 1
+print enron_data['PRENTICE JAMES']['total_stock_value']
